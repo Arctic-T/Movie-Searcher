@@ -1,7 +1,7 @@
-var sercher = new Vue({
-  el: "#cont-sercher",
+var searcher = new Vue({
+  el: "#cont-searcher",
   data: {
-    movieToSerch: "",
+    movieToSearch: "",
     movie: null,
   },
 });
@@ -9,9 +9,9 @@ var sercher = new Vue({
 $("#button").on("click", function () {
   $.ajax({
     url:
-      "https://private.omdbapi.com/?apikey=bef9c583&t=" + sercher.movieToSerch,
+      "https://private.omdbapi.com/?apikey=bef9c583&t=" + searcher.movieToSerch,
     success: function (datosObtenidos) {
-      sercher.movie = datosObtenidos;
+      searcher.movie = datosObtenidos;
     },
   });
 });
